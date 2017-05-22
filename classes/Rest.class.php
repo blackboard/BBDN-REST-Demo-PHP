@@ -18,6 +18,11 @@ class Rest {
 		$request->setAuth($constants->KEY, $constants->SECRET, HTTP_Request2::AUTH_BASIC);
 		$request->setBody('grant_type=client_credentials');
 		$request->setHeader('Content-Type', 'application/x-www-form-urlencoded');
+                        $request->setConfig(array(
+                                'ssl_verify_peer'   => $constants->ssl_verify_peer,
+                                'ssl_verify_host'   => $constants->ssl_verify_host
+                        ));
+
 		
 		
 		try {
@@ -46,6 +51,11 @@ class Rest {
 			$request->setHeader('Authorization', 'Bearer ' . $access_token);
 			$request->setHeader('Content-Type', 'application/json');
 			$request->setBody(json_encode($datasource));
+                        $request->setConfig(array(
+                                'ssl_verify_peer'   => $constants->ssl_verify_peer,
+                                'ssl_verify_host'   => $constants->ssl_verify_host
+                        ));
+
 			
 			try {
 				$response = $request->send();
@@ -71,6 +81,11 @@ class Rest {
 			
 			$request = new HTTP_Request2($constants->HOSTNAME . $constants->DSK_PATH . '/' . $dsk_id, HTTP_Request2::METHOD_GET);
 			$request->setHeader('Authorization', 'Bearer ' . $access_token);
+                        $request->setConfig(array(
+                                'ssl_verify_peer'   => $constants->ssl_verify_peer,
+                                'ssl_verify_host'   => $constants->ssl_verify_host
+                        ));
+
 		
 			try {
 				$response = $request->send();
@@ -100,6 +115,10 @@ class Rest {
 			$request->setHeader('Authorization', 'Bearer ' . $access_token);
 			$request->setHeader('Content-Type', 'application/json');
 			$request->setBody(json_encode($datasource));
+			$request->setConfig(array(
+  				'ssl_verify_peer'   => $constants->ssl_verify_peer,
+    				'ssl_verify_host'   => $constants->ssl_verify_host
+			));
 			
 			try {
 				$response = $request->send();
@@ -125,6 +144,11 @@ class Rest {
 			$request = new HTTP_Request2($constants->HOSTNAME . $constants->DSK_PATH . '/' . $dsk_id, HTTP_Request2::METHOD_DELETE);
 			$request->setHeader('Authorization', 'Bearer ' . $access_token);
 			$request->setHeader('Content-Type', 'application/json');
+                        $request->setConfig(array(
+                                'ssl_verify_peer'   => $constants->ssl_verify_peer,
+                                'ssl_verify_host'   => $constants->ssl_verify_host
+                        ));
+
 		
 			try {
 				$response = $request->send();
@@ -156,6 +180,10 @@ class Rest {
 			$request->setHeader('Authorization', 'Bearer ' . $access_token);
 			$request->setHeader('Content-Type', 'application/json');
 			$request->setBody(json_encode($term));
+			$request->setConfig(array(
+                                'ssl_verify_peer'   => $constants->ssl_verify_peer,
+                                'ssl_verify_host'   => $constants->ssl_verify_host
+                        ));
 		
 			try {
 				$response = $request->send();
@@ -181,6 +209,11 @@ class Rest {
 	
 			$request = new HTTP_Request2($constants->HOSTNAME . $constants->TERM_PATH . '/' . $term_id, HTTP_Request2::METHOD_GET);
 			$request->setHeader('Authorization', 'Bearer ' . $access_token);
+                        $request->setConfig(array(
+                                'ssl_verify_peer'   => $constants->ssl_verify_peer,
+                                'ssl_verify_host'   => $constants->ssl_verify_host
+                        ));
+
 		
 			try {
 				$response = $request->send();
@@ -211,6 +244,11 @@ class Rest {
 			$request->setHeader('Authorization', 'Bearer ' . $access_token);
 			$request->setHeader('Content-Type', 'application/json');
 			$request->setBody(json_encode($term));
+                        $request->setConfig(array(
+                                'ssl_verify_peer'   => $constants->ssl_verify_peer,
+                                'ssl_verify_host'   => $constants->ssl_verify_host
+                        ));
+
 		
 			try {
 				$response = $request->send();
@@ -236,6 +274,11 @@ class Rest {
 			$request = new HTTP_Request2($constants->HOSTNAME . $constants->TERM_PATH . '/' . $term_id, HTTP_Request2::METHOD_DELETE);
 			$request->setHeader('Authorization', 'Bearer ' . $access_token);
 			$request->setHeader('Content-Type', 'application/json');
+                        $request->setConfig(array(
+                                'ssl_verify_peer'   => $constants->ssl_verify_peer,
+                                'ssl_verify_host'   => $constants->ssl_verify_host
+                        ));
+
 		
 			try {
 				$response = $request->send();
@@ -268,6 +311,11 @@ class Rest {
 			$request->setHeader('Authorization', 'Bearer ' . $access_token);
 			$request->setHeader('Content-Type', 'application/json');
 			$request->setBody(json_encode($course));
+                        $request->setConfig(array(
+                                'ssl_verify_peer'   => $constants->ssl_verify_peer,
+                                'ssl_verify_host'   => $constants->ssl_verify_host
+                        ));
+
 		
 			try {
 				$response = $request->send();
@@ -293,6 +341,11 @@ class Rest {
 		
 			$request = new HTTP_Request2($constants->HOSTNAME . $constants->COURSE_PATH . '/' . $course_id, HTTP_Request2::METHOD_GET);
 			$request->setHeader('Authorization', 'Bearer ' . $access_token);
+                        $request->setConfig(array(
+                                'ssl_verify_peer'   => $constants->ssl_verify_peer,
+                                'ssl_verify_host'   => $constants->ssl_verify_host
+                        ));
+
 		
 			try {
 				$response = $request->send();
@@ -326,6 +379,11 @@ class Rest {
 			$request->setHeader('Authorization', 'Bearer ' . $access_token);
 			$request->setHeader('Content-Type', 'application/json');
 			$request->setBody(json_encode($course));
+                        $request->setConfig(array(
+                                'ssl_verify_peer'   => $constants->ssl_verify_peer,
+                                'ssl_verify_host'   => $constants->ssl_verify_host
+                        ));
+
 		
 			try {
 				$response = $request->send();
@@ -351,6 +409,11 @@ class Rest {
 			$request = new HTTP_Request2($constants->HOSTNAME . $constants->COURSE_PATH . '/' . $course_id, HTTP_Request2::METHOD_DELETE);
 			$request->setHeader('Authorization', 'Bearer ' . $access_token);
 			$request->setHeader('Content-Type', 'application/json');
+                        $request->setConfig(array(
+                                'ssl_verify_peer'   => $constants->ssl_verify_peer,
+                                'ssl_verify_host'   => $constants->ssl_verify_host
+                        ));
+
 		
 			try {
 				$response = $request->send();
@@ -384,6 +447,11 @@ class Rest {
 			$request->setHeader('Authorization', 'Bearer ' . $access_token);
 			$request->setHeader('Content-Type', 'application/json');
 			$request->setBody(json_encode($user));
+                        $request->setConfig(array(
+                                'ssl_verify_peer'   => $constants->ssl_verify_peer,
+                                'ssl_verify_host'   => $constants->ssl_verify_host
+                        ));
+
 		
 			try {
 				$response = $request->send();
@@ -409,6 +477,11 @@ class Rest {
 		
 			$request = new HTTP_Request2($constants->HOSTNAME . $constants->USER_PATH . '/' . $user_id, HTTP_Request2::METHOD_GET);
 			$request->setHeader('Authorization', 'Bearer ' . $access_token);
+                        $request->setConfig(array(
+                                'ssl_verify_peer'   => $constants->ssl_verify_peer,
+                                'ssl_verify_host'   => $constants->ssl_verify_host
+                        ));
+
 		
 			try {
 				$response = $request->send();
@@ -441,6 +514,11 @@ class Rest {
 			$request->setHeader('Authorization', 'Bearer ' . $access_token);
 			$request->setHeader('Content-Type', 'application/json');
 			$request->setBody(json_encode($user));
+                        $request->setConfig(array(
+                                'ssl_verify_peer'   => $constants->ssl_verify_peer,
+                                'ssl_verify_host'   => $constants->ssl_verify_host
+                        ));
+
 		
 			try {
 				$response = $request->send();
@@ -466,6 +544,11 @@ class Rest {
 			$request = new HTTP_Request2($constants->HOSTNAME . $constants->USER_PATH . '/' . $user_id, HTTP_Request2::METHOD_DELETE);
 			$request->setHeader('Authorization', 'Bearer ' . $access_token);
 			$request->setHeader('Content-Type', 'application/json');
+                        $request->setConfig(array(
+                                'ssl_verify_peer'   => $constants->ssl_verify_peer,
+                                'ssl_verify_host'   => $constants->ssl_verify_host
+                        ));
+
 		
 			try {
 				$response = $request->send();
@@ -501,6 +584,11 @@ class Rest {
 			$request->setHeader('Authorization', 'Bearer ' . $access_token);
 			$request->setHeader('Content-Type', 'application/json');
 			$request->setBody(json_encode($membership));
+                        $request->setConfig(array(
+                                'ssl_verify_peer'   => $constants->ssl_verify_peer,
+                                'ssl_verify_host'   => $constants->ssl_verify_host
+                        ));
+
 		
 			try {
 				$response = $request->send();
@@ -526,6 +614,11 @@ class Rest {
 		
 			$request = new HTTP_Request2($constants->HOSTNAME . $constants->COURSE_PATH . '/' . $course_id . '/users/' . $user_id,  HTTP_Request2::METHOD_GET);
 			$request->setHeader('Authorization', 'Bearer ' . $access_token);
+                        $request->setConfig(array(
+                                'ssl_verify_peer'   => $constants->ssl_verify_peer,
+                                'ssl_verify_host'   => $constants->ssl_verify_host
+                        ));
+
 		
 			try {
 				$response = $request->send();
@@ -558,6 +651,11 @@ class Rest {
 			$request->setHeader('Authorization', 'Bearer ' . $access_token);
 			$request->setHeader('Content-Type', 'application/json');
 			$request->setBody(json_encode($membership));
+                        $request->setConfig(array(
+                                'ssl_verify_peer'   => $constants->ssl_verify_peer,
+                                'ssl_verify_host'   => $constants->ssl_verify_host
+                        ));
+
 		
 			try {
 				$response = $request->send();
@@ -583,6 +681,11 @@ class Rest {
 			$request = new HTTP_Request2($constants->HOSTNAME . $constants->COURSE_PATH . '/' . $course_id . '/users/' . $user_id, HTTP_Request2::METHOD_DELETE);
 			$request->setHeader('Authorization', 'Bearer ' . $access_token);
 			$request->setHeader('Content-Type', 'application/json');
+                        $request->setConfig(array(
+                                'ssl_verify_peer'   => $constants->ssl_verify_peer,
+                                'ssl_verify_host'   => $constants->ssl_verify_host
+                        ));
+
 		
 			try {
 				$response = $request->send();
