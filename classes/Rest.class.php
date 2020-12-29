@@ -553,6 +553,7 @@ class Rest {
 			$membership->userId = $user_id;
 			$membership->courseId = $course_id;
 			$membership->created = $membership_created;
+			$membership->availability = new Availability();
 		
 			$request = new HTTP_Request2($constants->HOSTNAME . $constants->COURSE_PATH . '/' . $course_id . '/users/' . $user_id, 'PATCH');
 			$request->setHeader('Authorization', 'Bearer ' . $access_token);

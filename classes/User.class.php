@@ -1,6 +1,6 @@
 <?php
 
-class User
+class User implements JsonSerializable
 	{
 		public $id = '';
 
@@ -33,4 +33,32 @@ class User
 		public $address = '';
 
 		public $locale = '';
+
+		public function jsonSerialize() {
+			
+			if ( $this->id == '' ) {
+				return [
+					'externalId' => $this->externalId,
+					'dataSourceId' => $this->dataSourceId,
+					'userName' => $this->userName,
+					'password' => $this->password,
+					'studentId' => $this->studentId,
+					'availability' => $this->availability,
+					'name' => $this->name,
+					'contact' => $this->contact
+				];
+			} else {
+				return [
+					'id' => $this->id,
+					'externalId' => $this->externalId,
+					'dataSourceId' => $this->dataSourceId,
+					'userName' => $this->userName,
+					'password' => $this->password,
+					'studentId' => $this->studentId,
+					'availability' => $this->availability,
+					'name' => $this->name,
+					'contact' => $this->contact
+				];
+			}
+		}
 	}

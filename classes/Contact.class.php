@@ -11,5 +11,5 @@ class Contact
 
 	public $email = 'developers@blackboard.com';
 
-	public $webPage = 'https://community.blackboard.com/community/developers/rest';
+	public $webPage = 'https://docs.blackboard.com';
 }

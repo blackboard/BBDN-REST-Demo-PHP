@@ -1,6 +1,6 @@
 <?php
 
-class Membership
+class Membership implements JsonSerializable
 	{
 		public $userId = '';
 
@@ -13,4 +13,13 @@ class Membership
 		public $availability = '';
 
 		public $courseRoleId = 'Instructor';
+
+		public function jsonSerialize() {
+			
+			return [
+				'dataSourceId' => $this->dataSourceId,
+				'availability' => $this->availability,
+				'courseRoleId' => $this->courseRoleId
+			];
+		}
 	}
